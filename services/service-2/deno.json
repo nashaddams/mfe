@@ -1,0 +1,16 @@
+{
+  "name": "@mfe/service-2",
+  "exports": {},
+  "tasks": {
+    "bundle": {
+      "command": "deno eval '(await import(\"@mfe/shared/bundle\"))' -- --entry-points ./main.tsx --outfile ./public/main.js"
+    },
+    "run": {
+      "command": "deno eval '(await import(\"@mfe/shared/server\"))' -- --port 8002",
+      "dependencies": ["bundle"]
+    }
+  },
+  "imports": {
+    "@r2wc/react-to-web-component": "https://esm.sh/@r2wc/react-to-web-component@2.0.3?deps=react-dom@18.3.1"
+  }
+}

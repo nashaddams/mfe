@@ -1,0 +1,18 @@
+{
+  "name": "@mfe/shell",
+  "exports": {},
+  "tasks": {
+    "bundle": {
+      "command": "deno eval '(await import(\"@mfe/shared/bundle\"))' -- --entry-points ./main.tsx --outfile ./public/main.js"
+    },
+    "run": {
+      "command": "deno eval '(await import(\"@mfe/shared/server\"))' -- --port 8000",
+      "dependencies": ["bundle"]
+    }
+  },
+  "imports": {
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@7.0.1?deps=react-dom@18.3.1",
+    "styled-components": "https://esm.sh/styled-components@6.1.13?target=es2022&external=react"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "workspace": [
+    "./shared",
+    "./shell",
+    "./services/service-1",
+    "./services/service-2"
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "https://esm.sh/react@18.3.1",
+    "lib": ["deno.ns", "dom"]
+  },
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1"
+  },
+  "lint": {
+    "exclude": ["*/**/*.js"]
+  },
+  "fmt": {
+    "exclude": ["*/**/*.js"]
+  },
+  "lock": false
+}
